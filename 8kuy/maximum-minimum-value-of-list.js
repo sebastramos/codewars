@@ -3,11 +3,11 @@
 // and return the largest and lowest number in that list, respectively.
 
 var min = function(list){
-  return Math.min.apply(null,list);
+  return Math.min.apply(Math,list);
 }
 
 var max = function(list){
-  return Math.max.apply(null,list);
+  return Math.max.apply(Math,list);
 }
 
 
