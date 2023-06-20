@@ -6,3 +6,8 @@
 function setAlarm(employed, vacation) {
 	return employed === true && vacation === false ? true : false
 }
+
+// another solution
+function setAlarm(employed, vacation){
+  return employed && !vacation;
+}
