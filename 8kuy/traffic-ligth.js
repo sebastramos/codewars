@@ -14,3 +14,9 @@ function updateLight(current) {
   	return 'green'
   }
 }
+
+// a shorter solution using the condition chain
+
+function updateLight(current) {
+	return current === 'green' ? 'yellow' : current === 'yellow' ? 'red': 'green'
+}
