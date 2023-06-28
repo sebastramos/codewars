@@ -1,10 +1,18 @@
 // In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
 
+// Solution 1
 function highAndLow(numbers){
 	 const maxNum = numbers.split(' ').sort((a, b) => a - b).slice(-1)
    const minNum = numbers.split(' ').sort((a, b) => a - b)[0]
    
    return `${maxNum} ${minNum}`
+}
+
+// Solution 2
+function highAndLow(numbers){
+	 numbers = numbers.split(' ')
+   
+   return `${Math.max(...numbers)} ${Math.min(...numbers)}`
 }
 
 
