@@ -4,12 +4,17 @@
 
 // Return as a number.
 
-
+// Solution 1
 function divCon(x){
 	let int = x.filter(el => typeof el === 'number').reduce((a,b) => a + b, 0)
 	let str = x.filter(el => typeof el === 'string').map(e => Number(e)).reduce((a,b) => a + b, 0)
  
 	return int - str  
+}
+
+// Solution 2
+function divCon(x){
+  return x.reduce((acc, cur) => typeof cur === 'number'? acc + cur : acc - Number(cur),0)
 }
 
 console.log(divCon([9, 3, '7', '3']))
