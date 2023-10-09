@@ -20,11 +20,21 @@ function reverseNumber(n) {
   
   while (arr[0] === "0" && arr.length >= 1) {
   	arr.shift()
-  }
+  } // don't really need the "while" to delete 0
+    // we could use "Number" and zeros string that are in front will be delete in the conversion /**/
 	
-  return Number(arr.join(''))
+  return Number(arr.join('')) /**/
   
 }
+
+function reverseNumber(n) {
+  let isNegative = n < 0
+  let reverseAsString = Math.abs(n).toString().split('').reverse().join('')
+  let result = Number(reverseAsString) /**/
+  
+  return isNegative ? -result : result
+}
+
 
 console.log(reverseNumber(123))
 // 321
