@@ -22,7 +22,7 @@ function getMissingElement(arr){
   for (i = 0; i < 10; i++) {
   // i will increment to 0 => 9 
   // if it doesn't find the indexOf(i) in arr it return -1
-    if (superImportantArray.indexOf(i) === -1) return i;
+    if (arr.indexOf(i) === -1) return i;
   }
 }
 
