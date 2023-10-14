@@ -14,6 +14,7 @@ The pairs are selected as follows [(1,2),(5,8),(-4,-3),(7,6),5]
  
 // More examples in the test cases.
 
+// Solution 1
 function pairs(arr) {
 	// delete last element if array is not even
 	if(arr.length % 2 !== 0){
@@ -38,6 +39,18 @@ function pairs(arr) {
   // return count
 	return count
 }
+
+
+// Solution 2, shorter solution
+function pairs(arr){
+  let count = 0
+  for (let i = 0; i < arr.length; i+=2)
+    if (arr[i] - 1 === arr[i + 1] || arr[i] + 1 === arr[i + 1])
+      count++
+  return count
+}
+
+
 
 console.log(pairs([1,2,5,8,-4,-3,7,6,5]))
 // 3
