@@ -9,8 +9,9 @@
 // Repetition of numbers in the array could occur.
 
 function maxProduct(numbers, size){
-  numbers = numbers.sort((a,b) => a - b).slice(numbers.length - size).reduce((a,b) => a * b)
- return numbers
+  return numbers.sort((a,b) => a - b)
+  							.slice(numbers.length - size)
+                .reduce((a,b) => a * b)
 }
 
 console.log(maxProduct([4,3,5], 2))
