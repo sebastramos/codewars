@@ -33,5 +33,3 @@ console.log(squares(2,0))
 // []
 console.log(squares(2,-5))
 // []
-
-console.log(Math.pow(2,3))
