@@ -2,7 +2,7 @@
 // capitalize all letters at the given indices.
 // The input will be a lowercase string with no spaces and an array of digits.
 
-
+// Solution 1
 function capitalize(s,arr){
   
   let capS = s.split("")
@@ -16,8 +16,14 @@ function capitalize(s,arr){
   return capS.join('')
   }
   
-  console.log(capitalize("abcdef",[1,2,5]))
-  // "aBCdeF"
-  console.log(capitalize("abcdef",[1,2,5,100]))
-  // "aBCdeF"
+// Solution 2
+function capitalize(s,arr){
+  return [...s].map((x, i) => arr.includes(i) ? x.toUpperCase() : x).join('')
+}
+
+
+console.log(capitalize("abcdef",[1,2,5]))
+// "aBCdeF"
+console.log(capitalize("abcdef",[1,2,5,100]))
+// "aBCdeF"
   
