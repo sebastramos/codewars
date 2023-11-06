@@ -34,4 +34,5 @@ class Women extends Human {
 }
 
 
-console.log(God.create())
+const humans = God.create()
+console.log(humans);
