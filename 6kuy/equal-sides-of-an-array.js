@@ -29,8 +29,7 @@
 // Note:
 // If you are given an array with multiple answers, return the lowest correct index.
 
-function findEvenIndex(arr)
-{
+function findEvenIndex(arr) {
   let left = 0;
   let right = arr.reduce((s,n) => s + n, 0);
   for (let i = 0; i < arr.length; i++) {
