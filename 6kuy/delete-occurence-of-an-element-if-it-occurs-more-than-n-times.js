@@ -15,6 +15,7 @@
 // With list [20,37,20,21] and number 1
 // the result would be [20,37,21].
 
+// Solution 1
 function deleteNth(arr,n){
   // filter elements that appears once
     let once = arr.filter((e, i) => arr.indexOf(e) === i)
@@ -42,3 +43,17 @@ function deleteNth(arr,n){
   // [20,37,21]
   console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
   // [1, 1, 3, 3, 7, 2, 2, 2]
+
+
+// Solution 2
+function deleteNth(arr,n){
+  let new_arr = []
+  // for element element check if new_arr as it < n time
+  arr.forEach((e) => { 
+    if (new_arr.filter(i => i === e).length < n){
+    	// if true push to new_arr
+      new_arr.push(e)
+    }
+  })
+  return new_arr
+}
