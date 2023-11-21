@@ -37,6 +37,11 @@ let a="You're a(n) "
 return age>64?a+"elderly":age>17?a+"adult":age>12?a+"teenager":a+"kid" 
 }
 
+// Solution 2
+function describeAge(age) {
+  return "You're a(n) " + (age < 13 ? "kid" : age < 18 ? "teenager" : age < 65 ? "adult" : "elderly")
+}
+
 console.log(describeAge(9))
 // "You're a(n) kid"
 console.log(describeAge(10))
