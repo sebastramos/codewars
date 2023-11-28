@@ -3,6 +3,7 @@
 
 // Your task is to process a string with "#" symbols.
 
+// Solution 1
 function cleanString(s) {
   let container = []
 	for(let i= 0; i < s.length; i++) {
@@ -13,6 +14,13 @@ function cleanString(s) {
     }
   }
   return container.join('')
+}
+
+// Solution 2
+function cleanString(s) {
+  let result = []
+  [...s].map((char) => (char === "#" ? result.pop() : result.push(char)))
+  return result.join("")
 }
 
 console.log(cleanString("abc#d##c"))
