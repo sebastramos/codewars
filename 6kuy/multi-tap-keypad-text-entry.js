@@ -41,6 +41,7 @@
 // Likewise, the phone doesn't distinguish between upper and lowercase characters (but you should allow your module to accept input in either form, for convenience).
 // Tested phrases contain letters (A-Z and a-z), digits (0-9), and special characters # and *.
 
+// Solution 1
 function presses(phrase) {
 	phrase = String(phrase).split('').map(letter => letter.toUpperCase()).join('')
  
@@ -76,3 +77,15 @@ console.log(presses('LOL'))
 console.log(presses('HOW R U'))
 // 13
 
+
+// Solution 2
+const nKeyPress = c => {
+  if ( '1adgjmptw* #'.includes(c.toLowerCase()) ) return 1
+  if ( 'behknqux0'   .includes(c.toLowerCase()) ) return 2
+  if ( 'cfilorvy'    .includes(c.toLowerCase()) ) return 3
+  if ( 'sz234568'    .includes(c.toLowerCase()) ) return 4
+  if ( '79'          .includes(c.toLowerCase()) ) return 5
+}
+
+const presses = s => s.split('').map(nKeyPress).reduce((a, b) => a + b, 0)
+                                // call the function nKeyPress
