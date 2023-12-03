@@ -7,7 +7,7 @@
 // By this definition, any other character like a space or hyphen (eg. "elephant-ride") will split up a series of letters into two words (eg. "elephant" and "ride").
 // The abbreviated version of the word should have the first letter, then the number of removed characters, then the last letter (eg. "elephant ride" => "e6t r2e").
 
-
+// Solution 1
 function abbreviate(str) {
 
 	function separate() {
@@ -32,7 +32,6 @@ function abbreviate(str) {
   	return sentence
   }
 
-
   function checkAbbr() {
     let check = separate()
     let abbr = []
@@ -48,6 +47,14 @@ function abbreviate(str) {
   }
   
   return checkAbbr()
+}
+
+
+// Solution 2 (using regex)
+function abbreviate(string) {
+  return string.replace(/\w{4,}/g, function(word) {
+    return word[0] + (word.length - 2) + word.slice(-1)
+  })
 }
 
 console.log(abbreviate("You need, need not want, to complete this code-wars mission"))
