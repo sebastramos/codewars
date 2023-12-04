@@ -11,6 +11,15 @@ function hello(name) {
 // Solution 2
 const hello = s =>
   `Hello, ${s ? (s[0].toUpperCase() + s.slice(1).toLowerCase()) : 'World'}!`
+  
+// Solution 3
+function hello(name) {
+  if(name) {
+  	return `Hello, ${name[0].toUpperCase()}${name.slice(1).toLowerCase()}!`
+  } else {
+  	return 'Hello, World!'
+  }
+}
 
 console.log(hello("john"))
 // "Hello, John!"
