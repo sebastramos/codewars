@@ -3,21 +3,20 @@
 // Notice also that you return the characters from the first string concatenated with those from the second string.
 
 function solve(a, b) {
-	let notCommonB = []
-  let notCommonA = []
+	let notCommon = []
   
   for(let i = 0; i < a.length; i++) {
   	if (![...b].includes(a[i])) {
-    	notCommonA.push(a[i])
+    	notCommon.push(a[i])
     }
   }
   
   for(let i = 0; i < b.length; i++) {
   	if (![...a].includes(b[i])) {
-    	notCommonB.push(b[i])
+    	notCommon.push(b[i])
     }
   }
-	return notCommonA.concat(notCommonB).join('')
+	return notCommon.join('')
 }
 
 console.log(solve("xyab","xzca"))
