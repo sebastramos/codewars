@@ -2,6 +2,7 @@
 
 // Notice also that you return the characters from the first string concatenated with those from the second string.
 
+// Solution 1
 function solve(a, b) {
 	let notCommon = []
   
@@ -17,6 +18,12 @@ function solve(a, b) {
     }
   }
 	return notCommon.join('')
+}
+
+
+// Solution 2
+function solve(a, b) {
+	return (a+b).split('').filter(e => !a.includes(e) || !b.includes(e)).join('')
 }
 
 console.log(solve("xyab","xzca"))
