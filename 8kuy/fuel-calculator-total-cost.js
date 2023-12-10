@@ -19,6 +19,7 @@
 
 // return the totalCost.toFixed(2)
 
+// Solution 1
 function fuelPrice(litres, pricePerLitre) {
   
   if(litres >= 10) {
@@ -34,6 +35,15 @@ function fuelPrice(litres, pricePerLitre) {
   } else {
     return pricePerLitre.toFixed(2)
    }
+}
+
+// Solution 2
+function fuelPrice(litres, pricePerLitre) {
+  for(let i = 2; i <= 10; i += 2) {
+    if(litres >= i)
+      pricePerLitre -= .05
+    }
+  return +(litres * pricePerLitre).toFixed(2)
 }
 
 console.log(fuelPrice(5, 1.23))
