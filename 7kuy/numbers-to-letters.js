@@ -4,6 +4,7 @@
 
 // All inputs will be valid.
 
+// Solution 1
 function switcher(x){
 	let alphabet =[' ','?','!','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',''].reverse()
   
@@ -13,6 +14,10 @@ function switcher(x){
   }
   return string
 }
+
+// Solution 2
+const alpha = ' zyxwvutsrqponmlkjihgfedcba!? '
+const switcher = x => x.map(item => alpha[item]).join('')
 
 console.log(switcher(['24', '12', '23', '22', '4', '26', '9', '8']))
 // 'codewars'
