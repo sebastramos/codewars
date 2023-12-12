@@ -5,9 +5,14 @@
 // Numbers will be positive. 
 // The hexadecimal string should be lowercased.
 
+// Solution 1
 function evensAndOdds(num){
 	return num % 2 === 0 ? num.toString(2) : num.toString(16)
 }
+
+//Solution 2
+const evensAndOdds = n => n.toString(n%2 ? 16 : 2)
+
 
 console.log(evensAndOdds(2))
 //'10'
