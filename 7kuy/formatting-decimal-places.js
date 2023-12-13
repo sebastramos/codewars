@@ -4,11 +4,20 @@
 // Don't round the numbers!
 // Just cut them after two decimal places!
 
-
+//  Solution 1
 function twoDecimalPlaces(number) {
 	let num = String(number).split('.')
 	return Number(num[0] + '.' + num[1].slice(0,2))
 }
+
+// Solution 2
+const twoDecimalPlaces = number => Math.trunc(number*100)/100
+
+// Solution 3
+function twoDecimalPlaces(number) {
+    return +number.toFixed(4).slice(0, -2)
+}
+
 
 console.log(twoDecimalPlaces(32.8493))
 // 32.84  
