@@ -12,6 +12,7 @@
 
 // Return the resulting lamps string.
 
+// Solution 1
 function flyBy(lamps, drone){
 	let on = drone.length
   let result = ''
@@ -24,6 +25,9 @@ function flyBy(lamps, drone){
 	}
   return result
 }
+
+// Solution 2
+const flyBy = (lamps, drone) => [...lamps].fill('o', 0, drone.length).join('')
 
 console.log(flyBy('x', '=T'))
 // 'o'
