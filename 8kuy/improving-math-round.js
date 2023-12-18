@@ -19,9 +19,13 @@ Math.round(1784.76); // 1785
 // Math.round(x) (of course)
 // Math.pow(x,y) (returns x to the power of y - e.g. Math.pow(3,4) == 81)
 
+// Solution 1
 Math.roundTo = function (number, precision) {
 	return Math.round(+number.toFixed(precision) * Math.pow(10, precision)) / Math.pow(10, precision)
 }
+
+// Solution 2
+Math.roundTo = (number, precision) => Number(number.toFixed(precision))
 
 console.log(Math.roundTo(3.1415926535, 4))
 // 3.1416
