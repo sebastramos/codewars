@@ -34,6 +34,8 @@ and so the method would return [1,9,6,3,0,1,1,1,1,1] */
 //Notes
 // 0 < start <= end
 
+
+// Solution 1
 function paintLetterboxes(start, end) {
 	let list = {
   	0: 0,
@@ -52,7 +54,7 @@ function paintLetterboxes(start, end) {
   	i.toString()
      .split('')
      .map(e => +e)
-     .map(n => list.hasOwnProperty(n) ? list[n]++ : n)
+     .map(n => list[n]++)
   }
   return Object.values(list)
 }
