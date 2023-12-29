@@ -24,6 +24,7 @@ pattern(10): should return the following:
 1*********10 
 */
 
+// Solution 1
 function pattern(n) {
 	let result = ''
 	for(let i = 1; i <= n; i++) {
@@ -35,6 +36,15 @@ function pattern(n) {
     	result += 1 + '*'.repeat(i - 1) + i
     }
   }
+  return result
+}
+
+// Solution 2
+function pattern(n){
+	let result = '1'
+	for(let i = 2; i <= n; i++){
+	  result += '\n1' + '*'.repeat(i-1) + i
+	}
   return result
 }
 
