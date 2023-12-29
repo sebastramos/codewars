@@ -10,6 +10,7 @@
 // garden = 'slug spider rock gravel gravel gravel gravel gravel gravel gravel'
 // garden = 'gravel gravel rock gravel gravel gravel gravel gravel gravel gravel'
 
+// Solution 1
 function rakeGarden(garden) {
 	garden = garden.split(' ')
 	let cleanGarden = ''
@@ -22,6 +23,12 @@ function rakeGarden(garden) {
   }
   return cleanGarden.trim()
 }
+
+// Solution 2
+const rakeGarden = garden => 
+  garden.split(' ')
+    		.map(item => item === 'rock' ? 'rock' : 'gravel')
+    		.join(' ')
 
 let garden1 = 'slug spider rock gravel gravel gravel gravel gravel gravel gravel'
 
