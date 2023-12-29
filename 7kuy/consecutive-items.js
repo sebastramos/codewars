@@ -3,7 +3,7 @@
 
 // It is guaranteed that a and b are both present in arr.
 
-
+// Solution 1
 function consecutive(arr, a, b) {
 	for(let i = 0; i < arr.length; i++) {
   	if(arr[i] === a && arr[i+1] === b || arr[i] === b && arr[i+1] === a) {
@@ -13,6 +13,10 @@ function consecutive(arr, a, b) {
   return false
 }
 
+// Solution 2
+function consecutive(arr, a, b) {
+  return Math.abs(arr.indexOf(a) - arr.indexOf(b)) == 1;
+}
 
 console.log(consecutive([1, 3, 5, 7], 3, 7))
 // false
