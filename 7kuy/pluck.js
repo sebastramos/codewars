@@ -5,7 +5,7 @@
 // pluck([{a:1}, {a:2}], 'a')      // -> [1,2]
 // pluck([{a:1, b:3}, {a:2}], 'b') // -> [3, undefined]
 
-
+// Solution 1
 function pluck(objs, name) {
 	let result = []
 	for(let i = 0; i < objs.length; i++) {
@@ -15,7 +15,12 @@ function pluck(objs, name) {
     	result.push(undefined)
     }
   }
-  	return result
+  return result
+}
+
+// Solution 2
+function pluck(objs, name) {
+	return objs.map(obj => obj[name])
 }
 
 console.log(pluck([{a:1}, {a:2}], 'a'))
