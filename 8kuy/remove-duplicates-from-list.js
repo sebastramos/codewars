@@ -15,7 +15,7 @@ function distinct(a) {
  
 // Solution 2
 function distinct(a) {
-  return a.filter((item, index) => a.indexOf(item) === index)
+  return a.filter((e,i) => a.indexOf(e) === i)
 }
 
 console.log(distinct([1]))
