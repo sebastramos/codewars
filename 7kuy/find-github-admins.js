@@ -24,7 +24,8 @@ let list1 = [
     { firstName: 'Jing', lastName: 'X.', country: 'China', continent: 'Asia', age: 34, language: 'JavaScript', githubAdmin: 'yes' }
   ]
   */
-  
+
+  // Solution 1
   function findAdmin(list, language) {
       let selection = []
       for(let i = 0; i < list.length; i++) {
@@ -35,4 +36,9 @@ let list1 = [
     return selection
   }
   
+  // Solution 2
+  function findAdmin(list, lang) {
+    return list.filter(dev => dev.language === lang && dev.githubAdmin === 'yes')
+  }
+
   console.log(findAdmin(list1, 'JavaScript'))
