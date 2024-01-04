@@ -4,6 +4,7 @@
 // If D > (the number of digits of N), return all the digits.
 // If D <= 0, return an empty list.
 
+// Solution 1
 function lastDigit(n, d) {
 	if(d > n.length) {
   	return String(n).split('')
@@ -12,6 +13,11 @@ function lastDigit(n, d) {
   }else {
   	return String(n).split('').map(e => +e).slice(-d)
   }
+}
+
+// Solution 2
+function lastDigit(n, d) {
+	return (n + '').split('').splice(-d, d).map(Number)
 }
 
 console.log(lastDigit(1,1))
