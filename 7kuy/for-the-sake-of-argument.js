@@ -4,6 +4,7 @@
 
 // The function should accept any number of parameters.
 
+// Solution 1
 function numbers() {
 	for(let key in arguments) {
     if(typeof arguments[key] !== 'number') {
@@ -11,6 +12,16 @@ function numbers() {
     }
   }
   return true
+}
+
+// Solution 2
+function numbers(...arr) {
+	return arr.every(e => typeof e === 'number')
+}
+
+// Solution 3
+function numbers() {
+  return [...arguments].every(e => typeof e === 'number')
 }
 
 console.log(numbers(1, 4, 3, 2, 5))
