@@ -3,12 +3,18 @@
 // the second value of the second array,
 // the third value of the third array, and so on...
 
+// Solution 1
 function diagonalSum(matrix){
 	let sum = 0
 	for(let i = 0; i < matrix.length; i++) {
   	sum += matrix[i][i]
   }
   return sum
+}
+
+// Solution 2
+function diagonalSum(matrix){
+    return matrix.reduce((acc,curr,arr) => acc + curr[arr], 0)
 }
 
 console.log(diagonalSum([[12]]))
