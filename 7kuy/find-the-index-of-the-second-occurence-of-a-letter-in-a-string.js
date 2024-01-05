@@ -2,9 +2,15 @@
 // If there is no such letter in the string, then the function should return -1.
 // If the letter occurs only once in the string, then -1 should also be returned.
 
+// Solution 1
 function secondSymbol(str, l) {
 	let result = str.includes(l) ? str.replace(l, '*') : -1
   return result === -1 ? -1 : result.indexOf(l)
+}
+
+// Solution 2
+function secondSymbol(str, l) {
+	return str.indexOf(l, str.indexOf(l) + 1)
 }
 
 console.log(secondSymbol('Hello world!!!','l'))
