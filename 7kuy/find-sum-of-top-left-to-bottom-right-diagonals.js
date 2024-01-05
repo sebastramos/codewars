@@ -14,7 +14,7 @@ function diagonalSum(matrix){
 
 // Solution 2
 function diagonalSum(matrix){
-    return matrix.reduce((acc,curr,arr) => acc + curr[arr], 0)
+    return matrix.reduce((acc,currV,currI) => acc + currV[currI], 0)
 }
 
 console.log(diagonalSum([[12]]))
