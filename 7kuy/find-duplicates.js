@@ -3,6 +3,7 @@
 
 // Note: numbers and their corresponding string representations should not be treated as duplicates (i.e., "1" != 1).
 
+// Solution 1
 function duplicates(arr) {
 	let noDuplicate = []	
   let duplicate = []	
@@ -16,6 +17,11 @@ function duplicates(arr) {
   return duplicate.filter((a, i) => duplicate.indexOf(a) === i)
 }
 
+// Solution 2
+function duplicates(arr) {
+	let result = arr.filter((e,i) => arr.indexOf(e) !== i)
+  return result.filter((e,i) => result.indexOf(e) === i)
+}
 
 console.log(duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3, "5"]))
 // [4, 3, 1]
