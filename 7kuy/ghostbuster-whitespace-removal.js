@@ -9,6 +9,7 @@
 // If the building contains no ghosts, return the string:
 // "You just wanted my autograph didn't you?"
 
+// Solution 1
 function ghostBusters(str) {
   str = str.split('')
   
@@ -17,6 +18,13 @@ function ghostBusters(str) {
   } else {
   	return "You just wanted my autograph didn't you?"
   }
+}
+
+// Solution 2
+function ghostBusters(building) {
+  const str = "You just wanted my autograph didn't you?"
+  const noSpace = building.split(' ').join('')
+  return noSpace === building ? str : noSpace
 }
 
 console.log(ghostBusters("Sky scra per"))
