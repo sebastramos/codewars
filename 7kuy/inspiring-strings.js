@@ -2,6 +2,7 @@
 // If there are multiple words with the longest length, 
 // return the last instance of the word with the longest length.
 
+// Solution 1
 function longestWord(str) {
 	str = str.split(' ')
 	let sizeWord = 0, word
@@ -14,6 +15,13 @@ function longestWord(str) {
   }
   return word
 }
+
+// Solution 2
+function longestWord(str){
+    return str.split(' ')
+              .sort((b, a) => b.length - a.length)
+              .pop()
+  }
 
 console.log(longestWord('red white blue')) 
 // white
