@@ -1,5 +1,6 @@
 // Write a function that doubles every second integer in a list, starting from the left.
 
+// Solution 1
 function doubleEveryOther(a) {
 	let result = []
 	for(let i = 0; i < a.length; i++) {
@@ -10,6 +11,14 @@ function doubleEveryOther(a) {
     }
   }
   return result
+}
+
+// Solution 2
+function doubleEveryOther(a) {
+	for(let i = 1; i < a.length; i += 2) {
+	  a[i] *= 2
+	}
+	return a
 }
 
 console.log(doubleEveryOther([1,2,3,4]))
