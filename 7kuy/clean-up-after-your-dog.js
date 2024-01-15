@@ -13,7 +13,7 @@
 // Watch out though - if your dog is out there ('D'), he gets very touchy about being watched. 
 // If he is there you need to return 'Dog!!'.
 
-
+// Solution 1
 function crap(x, bags, cap){
 	if(x.some(e => e.includes('D'))) {
   	return 'Dog!!'
@@ -23,6 +23,15 @@ function crap(x, bags, cap){
     x.map(e => e.map(e => e === '@' ? crapCount++ : e))
     return crapCount > space ? 'Cr@p' : 'Clean'
   }
+}
+
+// Solution 2
+function crap(x, bags, cap){
+  let garden = x.flat()
+  let bagSpace = bags * cap
+  let numbCrap = garden.filter(val => val === '@').length
+  
+  return garden.includes('D') ? 'Dog!!' : bagSpace - numbCrap > 0 ? 'Clean' : 'Cr@p'
 }
 
 console.log(crap([['_','_','_','_'], ['_','_','_','@'], ['_','_','@', '_']], 2, 2))
