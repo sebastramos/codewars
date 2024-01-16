@@ -4,6 +4,7 @@
 
 // Input will always be an positive integer, so don't worry about type checking or negative/float values.
 
+// Solution 1
 function toCurrency(n) {
 	let nReverse = String(n).split('').reverse()
   let result = []
@@ -19,6 +20,10 @@ function toCurrency(n) {
   return result.reverse().join('')
 }
 
+// Solution 2
+function toCurrency(n) {
+	return n.toLocaleString('en-US')
+}
 
 console.log(toCurrency(123456))
 // "123,456"
