@@ -16,6 +16,7 @@
 // Names in the full name are separated by exactly one space (' ' ) ; without leading or trailing spaces.
 // Names will always be lowercase, except optionally their first letter.
 
+// Solution 1
 function initials(n){
 	n = n.split(' ')
   let middle = n.slice(0, n.length - 1).map(e => e[0].toUpperCase() + '.').join('')
@@ -23,8 +24,11 @@ function initials(n){
   let lastNmMaj = lastNm[0].toUpperCase() + lastNm.slice(1)
   
   return middle + lastNmMaj
-  
 }
+
+// Solution 2
+let initials = n =>
+  (n = n.split(' ')).map(w => w[0].toUpperCase()).join('.') + n.pop().slice(1)
 
 console.log(initials('code wars'))
 // 'C.Wars'
