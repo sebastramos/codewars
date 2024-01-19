@@ -5,7 +5,7 @@
 
 // and returns true only if the function in the params returns true for exactly one (1) item in the sequence.
 
-
+// Solution 1
 function one(arr, fun) {
 	let truthiness = []
 	for(let i = 0; i < arr.length; i++) {
@@ -14,6 +14,16 @@ function one(arr, fun) {
     }
   }
 	return truthiness.length === 1
+}
+
+// Solution 2
+function one(arr, fun){
+    return arr.filter(e => fun(e)).length === 1
+}
+
+// Solution 3
+function one(arr, fun){
+    return arr.filter(fun).length === 1
 }
 
 console.log(one([1,2,3,4,5], function(item){ return item<2}))
