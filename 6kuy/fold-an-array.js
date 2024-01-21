@@ -27,12 +27,30 @@ Step 1         Step 2        Step 3       Step 4       Step5
 
 // The input array should not be modified!
 
+
+// Solution 1
 function foldArray(array, runs) {
   const result = []
   while (array.length) {
   	result.push(array.pop() + (array.shift() || 0))
   }
   return runs - 1 ? foldArray(result, runs - 1) : result
+}
+
+// Solution 2
+function foldArray(array, runs) {
+  let leftEnd = Math.floor(array.length / 2)
+  let rightStart = Math.ceil(array.length / 2)
+
+  let left = array.slice(0, leftEnd)
+  let right = array.slice(rightStart).reverse()
+
+  let result = left.map((val, index) => val + right[index])
+  
+  if (leftEnd !== rightStart) {
+      result.push(array[leftEnd])
+  }
+  return runs === 1 ? result : foldArray(result, runs - 1)
 }
 
 console.log(foldArray([ 1, 2, 3, 4, 5 ], 1))
