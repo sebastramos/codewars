@@ -6,8 +6,14 @@
 
 // All values will be positive integers or floats, or zero.
 
+// Solution 1
 function plural(n) {
 	return n !== 1 ? true : false
+}
+
+// Solution 2
+function plural(n) {
+	return n !== 1
 }
 
 console.log(plural(0))
