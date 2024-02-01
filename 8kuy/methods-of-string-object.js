@@ -15,6 +15,10 @@ function firstToLast(str, c) {
   return firstPosition === -1 || lastPosition === -1 ? -1 : lastPosition - firstPosition
 }
 
+function firstToLast(str,c){
+  return (str.indexOf(c) < 0) ? -1 : str.lastIndexOf(c) - str.indexOf(c)
+}
+
 console.log(firstToLast("ababc","a"))
 // 2(2-0)
 console.log(firstToLast("ababc","c"))
