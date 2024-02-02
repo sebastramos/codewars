@@ -9,8 +9,14 @@
 
 // P.S. You have to create a new list and add a new item to that. 
 
+// Solution 1
 function addExtra(listOfNumbers){
   return listOfNumbers.concat(1)
+}
+
+// Solution 2
+function addExtra(listOfNumbers){
+  return [...listOfNumbers, 1]
 }
 
 console.log(addExtra([1,2,3]))
