@@ -1,21 +1,46 @@
 // In this simple exercise, you will build a program that takes a value, integer , and returns a list of its multiples up to another value, limit.
-
-// If limit is a multiple of integer, it should be included as well. There will only ever be positive integers passed into the function, not consisting of 0. The limit will always be higher than the base.
+// If limit is a multiple of integer, it should be included as well.
+// There will only ever be positive integers passed into the function, not consisting of 0.
+// The limit will always be higher than the base.
 
 // For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
 
+// Solution 1
+function findMultiples(integer, limit) {
+	let multiple = []
+  const add = integer
+  
+  while(integer < limit) {
+    if(multiple.length === 0) {
+      multiple.push(add)
+    } else {
+     	integer += add
+      if(integer <= limit) {
+      	multiple.push(integer)
+      }
+    }
+  }
+  return multiple
+}
+
+// Solution 2
 function findMultiples(integer, limit) {
 	let result = []
   
-  for(let i = integer; i<=limit; i+=integer) {	
+  for(let i = integer; i <= limit; i += integer) {	
   	result.push(i)
   }
   return result
 }
 
 
-console.log(findMultiples(2, 6))
 console.log(findMultiples(5, 25))
+// [5, 10, 15, 20, 25]
+console.log(findMultiples(1, 2))
+// [1, 2]
 console.log(findMultiples(5, 7))
+// [5]
+console.log(findMultiples(4, 27))
+// [4, 8, 12, 16, 20, 24]
 console.log(findMultiples(11, 54))
-
+// [11, 22, 33, 44]
