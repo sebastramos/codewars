@@ -10,6 +10,7 @@
 
 // Calculate number of day when the snail will reach the top of the column.
 
+// Solution 1
 function snail(column, day, night) {
 	let nDaysBeforeFinish = 0
   
@@ -24,6 +25,11 @@ function snail(column, day, night) {
     }
   }  
   return nDaysBeforeFinish
+}
+
+// Solution 2
+function snail(column, day, night) {
+	return Math.ceil((column - night) / (day - night))
 }
 
 console.log(snail(3,2,1))
