@@ -7,10 +7,16 @@
 // Once you have the located string you are finally going to multiply by it the third provided parameter, which will also be an integer. 
 // You are additionally required to add a hyphen in between each word.
 
+// Solution 1
 function modifyMultiply(str, i, m) {
 	str = str.split(' ')[i] + ' '
   return str.repeat(m).trim().split(' ').join('-')
 }
+
+// Solution 2
+function modifyMultiply(str,i,m) {
+  return Array(m).fill(str.split(' ')[i]).join('-')
+} 
 
 console.log(modifyMultiply("This is a string",3 ,5))
 // "string-string-string-string-string"
