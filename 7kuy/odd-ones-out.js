@@ -26,7 +26,25 @@ function oddOnesOut(n) {
 console.log(oddOnesOut([26, 23, 24, 17, 23, 24, 23, 26]))
 // [24, 24, 26, 26]
 
-
+// Solution 2 (base on Solution 1)
+function oddOnesOut(n) {
+	
+	let obj = {}
+	for(let i = 0; i < n.length; i++) {
+  	obj.hasOwnProperty(n[i]) ? obj[n[i]] += 1 : obj[n[i]] = 1
+  }
+  
+  for(let number in obj) {
+  	if(obj[number] % 2 !== 0) {
+    	delete obj[number]
+    }
+  } 
+  
+  let evenNum = []
+  n.map(e => obj.hasOwnProperty(e) ? evenNum.push(e) : e)
+  	
+  return evenNum
+}
 
 
 console.log(oddOnesOut([1, 2, 3, 1, 3, 3]))
