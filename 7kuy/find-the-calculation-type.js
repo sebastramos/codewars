@@ -8,6 +8,7 @@
 // Cases with just one possible answers are generated.
 // Only valid arguments will be passed to the function.
 
+// Solution 1
 function calcType(a, b, res) {
   if( a + b === res) {
   	return 'addition'
@@ -20,6 +21,15 @@ function calcType(a, b, res) {
   }
 }
 
+// Solution 2
+const calcType = (a, b, res) => 
+  a + b === res ? 'addition' :
+  a - b === res ? 'subtraction' :
+  a * b === res ? 'multiplication' :
+  a / b === res ? 'division' : 
+  null;
+
+  
 console.log(calcType(1,2,3))
 // 'addition'
 console.log(calcType(10,4,40))
