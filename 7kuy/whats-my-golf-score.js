@@ -10,6 +10,7 @@
 // Complete the function which accepts two strings and calculates the golf score of a game.
 // Both strings will be of length 18, and each character in the string will be a number between 1 and 9 inclusive.
 
+// Solution 1
 function golfScoreCalculator(parList, scoreList){
 	parList = parList.split('')
   scoreList = scoreList.split('')
@@ -21,6 +22,9 @@ function golfScoreCalculator(parList, scoreList){
   return finalScore
 }
 
+// Solution 2
+const golfScoreCalculator = (parList, scoreList) =>
+  [...scoreList].reduce((result, score, index) => result += score - parList[index], 0)
 
 console.log(golfScoreCalculator('443454444344544443', '353445334534445344'))
 // -1
