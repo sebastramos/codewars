@@ -2,6 +2,7 @@
 // Strings passed in will consist of only letters and spaces.
 // Spaces will be included only when more than one word is present.
 
+// Solution 1
 function spinWords(string) {
 	const str = string.split(' ')
   let bigWord = str.filter(e => e.length >= 5)
@@ -15,6 +16,13 @@ function spinWords(string) {
     }
   }
   return result.join(' ')
+}
+
+// Solution 2
+function spinWords(words){
+  return words.split(' ').map(function (word) {
+    return (word.length > 4) ? word.split('').reverse().join('') : word
+  }).join(' ')
 }
 
 console.log(spinWords("Welcome"))
