@@ -5,6 +5,7 @@
 
 // Function will return true for lucky numbers and false for others.
 
+// Solution 1
 function isLucky(n) {
   const lucky = String(n).split('')
   												.map(e => +e)
@@ -12,6 +13,9 @@ function isLucky(n) {
                           
 	return lucky === 0 ? true : lucky % 9 === 0 ? true : false
 }
+
+// Solution 2
+const isLucky = n => n % 9 === 0
 
 console.log(isLucky(1892376))
 // true
