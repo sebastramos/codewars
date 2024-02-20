@@ -4,6 +4,7 @@
 // Notice that the last element is always included.
 // All numbers will be greater than 0.
 
+// Solution 1
 function solve(arr) {
 	let dominant = []
 	for(let i = 0; i < arr.length; i++) {	
@@ -12,6 +13,11 @@ function solve(arr) {
     }
   }
   return dominant
+}
+
+// Solution 2
+function solve(arr) {
+  return arr.filter((e,i)=> arr.slice(i+1).every(x => x < e))
 }
 
 console.log(solve([16,17,14,3,14,5,2]))
