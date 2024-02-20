@@ -5,12 +5,24 @@
 
 // Don't forget the space after the closing parentheses!
 
+// Solution 1
 function createPhoneNumber(numbers){
   const npa = numbers.slice(0, 3).join('')
   const coc = numbers.slice(3, 6).join('')
   const cn = numbers.slice(6).join('')
  
   return `(${npa}) ${coc}-${cn}`
+}
+
+// Solution 2
+function createPhoneNumber(numbers){
+  let format = "(xxx) xxx-xxxx"
+  
+  for(let i = 0; i < numbers.length; i++) {
+    format = format.replace('x', numbers[i])
+  }
+  
+  return format
 }
 
 console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
