@@ -15,6 +15,7 @@
 
 // Please return an array
 
+// Solution 1
 function scoreboard(string) {
 	string = string.split(' ')
   let result = []
@@ -38,6 +39,13 @@ function scoreboard(string) {
     }
   }
   return result
+}
+
+// Solution 2
+function scoreboard(string) {
+  let arr = string.split(' ')
+  let a = ['nil','one','two','three','four','five','six','seven','eight','nine']
+  return [a.indexOf(arr[arr.length-2]), a.indexOf(arr[arr.length-1])]
 }
 
 console.log(scoreboard("The score is four nil"))
