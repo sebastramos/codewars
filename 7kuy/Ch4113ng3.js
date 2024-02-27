@@ -6,6 +6,7 @@
 
 // "Fundamentals" --> "Fund4m3nt41s"
 
+// Solution 1
 function nerdify(txt) {
 	txt = txt.split('')
   
@@ -20,6 +21,15 @@ function nerdify(txt) {
     	return e
     }
   }).join('')
+}
+
+// Solution 2
+function nerdify(txt){
+  return txt.replaceAll('a','4')
+  					.replaceAll('A','4')
+            .replaceAll('e','3')
+            .replaceAll('E','3')
+            .replaceAll('l','1')
 }
 
 console.log(nerdify("Fund4m3nt41s"))
